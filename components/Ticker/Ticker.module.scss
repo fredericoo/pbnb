@@ -1,0 +1,132 @@
+@import "styles/abstracts/mixins";
+
+.entry {
+	display: inline-flex;
+	& > *:not(:last-child) {
+		margin-right: 0.25rem;
+	}
+	.label {
+		white-space: nowrap;
+		text-transform: uppercase;
+		letter-spacing: 0.04em;
+		font-weight: 800;
+	}
+	.value {
+		white-space: nowrap;
+	}
+	.arrow {
+		align-self: center;
+		width: 0;
+		height: 0;
+		border-left: 0.5em solid transparent;
+		border-right: 0.5em solid transparent;
+	}
+	&.neutral {
+		.arrow {
+			display: none;
+		}
+	}
+	&.positive {
+		.value {
+			color: var(--colour__positive4);
+		}
+		.arrow {
+			border-bottom: 0.5em solid var(--colour__positive4);
+		}
+	}
+	&.negative {
+		.value {
+			color: var(--colour__negative4);
+		}
+		.arrow {
+			border-top: 0.5em solid var(--colour__negative4);
+		}
+	}
+
+	&.skeleton {
+		pointer-events: none;
+		user-select: none;
+		.label,
+		.value,
+		.price {
+			border-radius: 2px;
+			background: currentColor;
+			opacity: 0.1;
+		}
+		.value {
+			border-radius: 2px;
+			color: inherit;
+			opacity: 0.05;
+		}
+		.arrow {
+			border-radius: 2px;
+			border: 0.5em solid currentColor;
+			opacity: 0.05;
+		}
+	}
+}
+
+@keyframes animateFirstList {
+	0% {
+		transform: translate(0, 0);
+		opacity: 1;
+	}
+	50% {
+		transform: translate(-100%, 0);
+		opacity: 1;
+	}
+	50.1% {
+		transform: translate(-100%, 0);
+		opacity: 0;
+	}
+	50.2% {
+		transform: translate(100%, 0);
+		opacity: 0;
+	}
+	50.3% {
+		transform: translate(100%, 0);
+		opacity: 1;
+	}
+	to {
+		transform: translate(0, 0);
+		opacity: 1;
+	}
+}
+
+@keyframes animateSecondList {
+	0% {
+		transform: translate(100%, 0);
+		opacity: 1;
+	}
+	50% {
+		transform: translate(0, 0);
+		opacity: 1;
+	}
+	99.7% {
+		transform: translate(-100%, 0);
+		opacity: 1;
+	}
+	99.8% {
+		transform: translate(-100%, 0);
+		opacity: 0;
+	}
+	99.9% {
+		transform: translate(100%, 0);
+		opacity: 0;
+	}
+	to {
+		transform: translate(100%, 0);
+		opacity: 1;
+	}
+}
+
+.timestamp {
+	user-select: none;
+	right: max(var(--sidebearing) + var(--gutter), var(--gutter));
+	position: absolute;
+	opacity: 0.3;
+	font-size: 8px;
+	text-transform: uppercase;
+	letter-spacing: 0.04em;
+	font-variant-numeric: tabular-nums;
+}

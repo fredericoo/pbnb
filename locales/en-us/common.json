@@ -1,0 +1,26 @@
+{
+	"title": "Policy Blueprint & Belo",
+	"desc": "Independent investment research and institutional strategy firm, that combines economic data and policy insight to analyze global and regional trends in support of investment decisions for clients across a number of markets. ",
+	"menu": {
+		"courtesyCall": "Book a Courtesy Call",
+		"sampleMaterial": "Request Sample Material",
+		"contact": "Contact"
+	},
+	"locales": {
+		"en-us": "EN"
+	},
+	"address1": {
+		"line1": "Rua Ouro Fino 395/701",
+		"line2": "Belo Horizonte – MG",
+		"line3": "30310-110 – Brazil"
+	},
+	"address2": {
+		"line1": "6824 Thammy Ct. ",
+		"line2": "Bethesda – MD",
+		"line3": "20817 – USA"
+	},
+	"separator": {
+		"decimal": ".",
+		"thousands": ","
+	}
+}
