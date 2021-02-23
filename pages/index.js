@@ -32,11 +32,20 @@ export default function Home({ menu }) {
 	return (
 		<Layout>
 			<Meta />
-			<Grid className="my-5">
-				<Grid.Col sm="screen-start / screen-end">
-					<Particles />
+			<Grid>
+				<Grid.Col rowSm="1" sm="screen-start / screen-end">
+					<div
+						style={{
+							position: "relative",
+							overflow: "hidden",
+							height: "100%",
+							width: "100%",
+						}}
+					>
+						<Particles />
+					</div>
 				</Grid.Col>
-				<Grid.Col md="col-4 / span 6" className="ta-center">
+				<Grid.Col rowSm="1" md="col-4 / span 6" className="py-5">
 					<Flow>
 						<header>
 							<p className="smcp l-2">Designed for investors</p>
@@ -56,7 +65,6 @@ export default function Home({ menu }) {
 						</div>
 					</Flow>
 				</Grid.Col>
-				<Grid.Col md="span 6"></Grid.Col>
 			</Grid>
 
 			<Grid container>
