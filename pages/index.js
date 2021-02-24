@@ -19,8 +19,7 @@ export default function Home({ menu }) {
 	const [entries, setEntries] = useState({});
 
 	useEffect(() => {
-		if (data) {
-			console.log(data);
+		if (data && data.stocks) {
 			setEntries({
 				NYSE: data.stocks.filter((stock) => stock.symbol === "^NYA")[0],
 				Nasdaq: data.stocks.filter((stock) => stock.symbol === "^IXIC")[0],

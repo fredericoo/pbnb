@@ -28,13 +28,12 @@ const Footer = () => {
 			<h2 className="visually-hidden">{t("common:footer")}</h2>
 			<Grid container className="py-3 s-sm">
 				<Grid.Col>
-					<Columns sm={2} md={3} lg={4}>
+					<Columns sm={1} md={2} lg={4}>
 						<section className={styles.logo}>
 							<img src="/img/pbnb-full.svg" />
 						</section>
 						<section className={styles.links}>
 							<h3>Links</h3>
-							<p>&nbsp;</p>
 							<p>
 								<Link href="/material">Request a Sample Material</Link>
 							</p>
