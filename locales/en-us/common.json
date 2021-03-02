@@ -44,6 +44,7 @@
 		"infoText": "We use Google Analytics software (Universal Analytics) to collect anonymized information about how you use our website. We do this to help make sure the site is meeting the needs of its users and to help us make improvements to the site.",
 		"infoAside": "We do not allow Google to use or share the data about how you use this site."
 	},
+	"toggleMenu": "Toggles the menu.",
 	"submit": "Submit",
 	"optional": "(Optional)",
 	"form": {

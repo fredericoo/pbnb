@@ -60,7 +60,9 @@ export default function Home({ menu }) {
 								policy insight to analyze global and regional trends in support
 								of investment decisions for clients across a number of markets.
 							</p>
-							<Button type="primary">Book a Courtesy Call</Button>
+							<Button href="/call" type="primary">
+								Book a Courtesy Call
+							</Button>
 						</div>
 					</Flow>
 				</Grid.Col>
@@ -126,7 +128,9 @@ export default function Home({ menu }) {
 							companies and sectors.
 						</p>
 						<div className="ta-center">
-							<Button type="primary">Request sample material</Button>
+							<Button href="/material" type="primary">
+								See examples of our work
+							</Button>
 						</div>
 					</div>
 				</Grid.Col>

@@ -12,52 +12,46 @@ const CallPage = () => {
 			<Grid className="py-3">
 				<Grid.Col md="screen-start / col-7">
 					<Image
-						src="https://images.prismic.io/pbnb/bdda152e-de85-4728-9ab1-2bcf31fbda45_sample-material.png?auto=compress,format"
-						width={2678}
-						height={1503}
+						src="https://images.prismic.io/pbnb/7b672782-6b1d-4d96-929f-40bc98c62724_call.png?auto=compress,format"
+						width={1578}
+						height={1047}
 						layout="responsive"
 					/>
 				</Grid.Col>
 				<Grid.Col md="col-7 / grid-end">
 					<Flow spacing="2rem">
 						<header>
-							<h1 className="h-2">Request Sample Material</h1>
+							<h1 className="h-2">Book a Courtesy Call</h1>
 							<div className="body l-2 s-sm">
 								<p>
-									Learn more about PB&B by requesting a sample report. We are
-									happy to give you more context about our services and will
-									send you a report via e-mail within one business day.
+									Find the best date and time for a Courtesy Call and we will
+									reach out to you with a confirmation.
 								</p>
 							</div>
 						</header>
 						<ContactForm
-							subject="Sample Material Request"
+							subject="Courtesy Call Request"
 							url="/api/submit"
 							fields={[
 								{
-									type: "select",
-									name: "subject",
-									label: "Subject",
+									type: "date",
+									name: "preferredDate",
+									label: "Preferred date",
 									required: true,
-									options: [
-										"Commodities",
-										"Aviation",
-										"Highways",
-										"Retailers",
-										"Shipping",
-									],
-									helpText: "You'll receive a report on the subject above.",
+									helpText:
+										"Selecting a date does not guarantee you a slot. You will receive confirmation from one of our team members beforehand.",
+								},
+								{
+									type: "select",
+									name: "timeOfDay",
+									label: "Time of day",
+									required: true,
+									options: ["Morning", "Afternoon"],
 								},
 								{
 									type: "text",
 									name: "name",
-									label: "Your Name",
-									required: true,
-								},
-								{
-									type: "text",
-									name: "companyName",
-									label: "Company Name",
+									label: "Name",
 									required: true,
 								},
 								{
@@ -66,8 +60,14 @@ const CallPage = () => {
 									label: "Email",
 									required: true,
 								},
-								{ type: "phone", name: "phone", label: "Phone" },
 								{
+									type: "phone",
+									name: "phone",
+									label: "Phone",
+									required: true,
+								},
+								{
+									required: true,
 									type: "textarea",
 									name: "message",
 									label: "Tell us about you",

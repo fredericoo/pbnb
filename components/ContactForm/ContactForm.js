@@ -1,5 +1,8 @@
 import styles from "./ContactForm.module.scss";
+
 import Button from "components/Button/Button";
+import Calendar from "components/Calendar/Calendar";
+
 import { useState, useEffect } from "react";
 import useTranslation from "next-translate/useTranslation";
 
@@ -48,7 +51,7 @@ const ContactForm = ({ fields, url, subject }) => {
 		>
 			{fields.map((field, key) => {
 				return (
-					<label>
+					<label key={key}>
 						{field.label && (
 							<span>{`${field.label} ${
 								field.required ? "" : t("common:optional")
@@ -56,7 +59,6 @@ const ContactForm = ({ fields, url, subject }) => {
 						)}
 						<InputComponent
 							type={field.type}
-							key={key}
 							name={field.name}
 							required={field.required}
 							handleChange={handleChange}
@@ -64,7 +66,7 @@ const ContactForm = ({ fields, url, subject }) => {
 							options={field.options}
 						/>
 						{field.helpText && (
-							<div className="smcp l-3 s-xs">{field.helpText}</div>
+							<div className="smcp l-2 s-xs">{field.helpText}</div>
 						)}
 					</label>
 				);
@@ -105,7 +107,7 @@ const InputComponent = ({ type, label, handleChange, ...props }) => {
 		case "select":
 			return (
 				<div className={styles.select}>
-					<select onChange={handleChange}>
+					<select name={props.name} onChange={handleChange}>
 						{props.options.map((option, key) => (
 							<option key={key} value={option}>
 								{option}
@@ -113,6 +115,14 @@ const InputComponent = ({ type, label, handleChange, ...props }) => {
 						))}
 					</select>
 				</div>
+			);
+		case "date":
+			return (
+				<Calendar
+					onChange={handleChange}
+					name={props.name}
+					value={props.value}
+				/>
 			);
 	}
 

@@ -8,13 +8,15 @@
 			font-size: 0.8rem;
 
 			letter-spacing: 0.08em;
-			opacity: 0.5;
+			opacity: 0.8;
 		}
-		margin-bottom: 1rem;
+		margin-bottom: 1.25rem;
 	}
 	input,
 	textarea,
 	select {
+		font-weight: 300;
+		line-height: 1.4;
 		-webkit-appearance: none;
 		width: 100%;
 		background: #f7f7f7;
@@ -26,11 +28,7 @@
 	.select {
 		width: 100%;
 		position: relative;
-		color: var(--colour__positive4);
-		select {
-			color: var(--colour__positive4);
-			border: 2px solid var(--colour__positive4);
-		}
+
 		&:after {
 			pointer-events: none;
 			content: "";

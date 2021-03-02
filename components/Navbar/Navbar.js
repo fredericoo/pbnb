@@ -16,7 +16,9 @@ const Navbar = () => {
 		setIsOpen(false);
 	}, [asPath]);
 
-	const menu = [{ label: "sampleMaterial", href: "/material" }];
+	const menu = [
+		// { label: "sampleMaterial", href: "/material" }
+	];
 
 	return (
 		<nav className={`container ${styles.navbar}`}>
@@ -54,7 +56,10 @@ const Navbar = () => {
 					</ul>
 					<LangPicker />
 					<div className={styles.login}>
-						<Button type="ghost" size="sm" href="/call">
+						<Button type="secondary" size="sm" href="/material">
+							{t("common:menu.sampleMaterial")}
+						</Button>
+						<Button type="primary" size="sm" href="/call">
 							{t("common:menu.courtesyCall")}
 						</Button>
 					</div>
