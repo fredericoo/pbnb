@@ -14,7 +14,7 @@ async function submit(req, res) {
 		});
 		return;
 	}
-	if (!body.fields) {
+	if (!Object.values(body.fields).length) {
 		res.json({
 			timestamp,
 			success: false,
@@ -44,9 +44,9 @@ async function submit(req, res) {
 		.join("<br/>");
 
 	const msg = {
-		to: "rincofrederico@gmail.com", // Change to your recipient
-		from: "noreply@pbnb.re", // Change to your verified sender
-		subject: req.body.subject || "Form submission",
+		to: "rincofrederico@gmail.com",
+		from: "noreply@pbnb.re",
+		subject: body.subject || "Form submission",
 		text,
 		html,
 	};

@@ -8,8 +8,6 @@ const Particles = () => (
 			left: 0,
 			width: "100%",
 			height: "100%",
-			pointerEvents: "none",
-			zIndex: -1,
 		}}
 	>
 		<ParticlesJs
@@ -82,7 +80,7 @@ const Particles = () => (
 					events: {
 						onhover: {
 							enable: false,
-							mode: "repulse",
+							mode: "grab",
 						},
 						onclick: {
 							enable: false,

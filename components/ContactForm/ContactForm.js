@@ -1,36 +1,72 @@
-import { useState } from "react";
+import styles from "./ContactForm.module.scss";
+import Button from "components/Button/Button";
+import { useState, useEffect } from "react";
+import useTranslation from "next-translate/useTranslation";
 
 const ContactForm = ({ fields, url, subject }) => {
-	const [values, setValues] = useState({});
+	const { t } = useTranslation();
+
+	const [values, setValues] = useState(
+		Object.fromEntries(fields.map((field) => [field.name, ""]))
+	);
 	const [message, setMessage] = useState();
+	const [enabled, setEnabled] = useState(true);
 
 	const handleChange = (e) => {
 		e.target && setValues({ ...values, [e.target.name]: e.target.value });
 	};
 
+	useEffect(() => {
+		let reEnable;
+		if (!enabled) {
+			reEnable = window.setTimeout(
+				() => setEnabled(true),
+				message?.success ? 5000 : 1500
+			);
+		}
+		return () => window.clearTimeout(reEnable);
+	}, [enabled]);
+
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		setMessage({});
+		setMessage();
+		setEnabled(false);
 		fetch(url, {
 			method: "POST",
 			body: JSON.stringify({ subject, fields: values }),
 		})
 			.then((res) => res.json())
-			.then((res) => setMessage({ success: res.success, text: res.message }));
+			.then((res) => {
+				setMessage({ success: res.success, text: res.message });
+			});
 	};
 
 	return (
-		<form onSubmit={handleSubmit}>
+		<form
+			className={`${styles.form} ${enabled ? "" : styles.disabled}`}
+			onSubmit={handleSubmit}
+		>
 			{fields.map((field, key) => {
 				return (
-					<InputComponent
-						type={field.type}
-						key={key}
-						label={field.label}
-						name={field.name}
-						handleChange={handleChange}
-						value={values[field.name]}
-					/>
+					<label>
+						{field.label && (
+							<span>{`${field.label} ${
+								field.required ? "" : t("common:optional")
+							}`}</span>
+						)}
+						<InputComponent
+							type={field.type}
+							key={key}
+							name={field.name}
+							required={field.required}
+							handleChange={handleChange}
+							value={values[field.name]}
+							options={field.options}
+						/>
+						{field.helpText && (
+							<div className="smcp l-3 s-xs">{field.helpText}</div>
+						)}
+					</label>
 				);
 			})}
 			<input
@@ -40,8 +76,18 @@ const ContactForm = ({ fields, url, subject }) => {
 				onChange={handleChange}
 				value={values["robot"]}
 			/>
-			<input type="submit" value="submit" />
-			{message && <div>{message.text}</div>}
+			<Button type="primary" disabled={!enabled} submit>
+				{t("common:submit")}
+			</Button>
+			{message && (
+				<div
+					className={`${styles.message} ${
+						message.success ? styles.success : styles.error
+					}`}
+				>
+					{t(`common:form.${message.text}`)}
+				</div>
+			)}
 		</form>
 	);
 };
@@ -49,18 +95,24 @@ const ContactForm = ({ fields, url, subject }) => {
 const InputComponent = ({ type, label, handleChange, ...props }) => {
 	switch (type) {
 		case "text":
-			return (
-				<label>
-					{label && <span>{label}</span>}
-					<input type={type} {...props} onChange={handleChange} />
-				</label>
-			);
+			return <input type={type} {...props} onChange={handleChange} />;
+		case "email":
+			return <input type={type} {...props} onChange={handleChange} />;
+		case "phone":
+			return <input type={type} {...props} onChange={handleChange} />;
 		case "textarea":
+			return <textarea type={type} {...props} onChange={handleChange} />;
+		case "select":
 			return (
-				<label>
-					{label && <span>{label}</span>}
-					<textarea type={type} {...props} onChange={handleChange} />
-				</label>
+				<div className={styles.select}>
+					<select onChange={handleChange}>
+						{props.options.map((option, key) => (
+							<option key={key} value={option}>
+								{option}
+							</option>
+						))}
+					</select>
+				</div>
 			);
 	}
 

@@ -1,0 +1,82 @@
+.form {
+	label {
+		display: flex;
+		flex-direction: column;
+		span {
+			padding: 0 0.618rem;
+			text-transform: uppercase;
+			font-size: 0.8rem;
+
+			letter-spacing: 0.08em;
+			opacity: 0.5;
+		}
+		margin-bottom: 1rem;
+	}
+	input,
+	textarea,
+	select {
+		-webkit-appearance: none;
+		width: 100%;
+		background: #f7f7f7;
+
+		border: none;
+		padding: 0.618rem 0.618rem;
+		border-radius: 4px;
+	}
+	.select {
+		width: 100%;
+		position: relative;
+		color: var(--colour__positive4);
+		select {
+			color: var(--colour__positive4);
+			border: 2px solid var(--colour__positive4);
+		}
+		&:after {
+			pointer-events: none;
+			content: "";
+			position: absolute;
+			display: block;
+			height: 0.5em;
+			width: 0.5em;
+			border-style: solid;
+			border-width: 0 0 1px 1px;
+
+			transform: rotate(-45deg);
+			right: 0.75em;
+			top: calc(50% - 0.33em);
+		}
+	}
+
+	&.disabled {
+		pointer-events: none;
+		opacity: 0.2;
+	}
+}
+
+.message {
+	margin-top: 1rem;
+	padding: 16px;
+	position: relative;
+	&:before {
+		background: var(--colour__secondary);
+		border-radius: 8px;
+		content: "";
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		top: 0;
+		left: 0;
+		opacity: 0.2;
+		z-index: -1;
+	}
+	&.success {
+		&:before {
+			background: var(--colour__positive4);
+		}
+	}
+	&.error {
+		&:before {
+			background: var(--colour__negative1);
+		}
+	}
+}

@@ -16,10 +16,7 @@ const Navbar = () => {
 		setIsOpen(false);
 	}, [asPath]);
 
-	const menu = [
-		{ label: "sampleMaterial", href: "/material" },
-		{ label: "contact", href: "/contact" },
-	];
+	const menu = [{ label: "sampleMaterial", href: "/material" }];
 
 	return (
 		<nav className={`container ${styles.navbar}`}>
