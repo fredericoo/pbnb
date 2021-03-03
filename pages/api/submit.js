@@ -44,7 +44,7 @@ async function submit(req, res) {
 		.join("<br/>");
 
 	const msg = {
-		to: "hello@belo.re",
+		to: "belo@belo.re",
 		from: "noreply@pbnb.re",
 		subject: body.subject || "Form submission",
 		text,
