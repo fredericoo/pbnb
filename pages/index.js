@@ -49,16 +49,17 @@ export default function Home({ menu }) {
 						<header>
 							<p className="smcp l-2">Designed for investors</p>
 							<h1 className="h-1">
-								Combining economic data and policy insight to analyze global and
+								Combining policy insight and economic data to analyze global and
 								regional trends.
 							</h1>
 						</header>
 						<div className={`body`}>
 							<p>
-								Policy Blueprint & Belo is an independent investment research
-								and institutional strategy firm, that combines economic data and
-								policy insight to analyze global and regional trends in support
-								of investment decisions for clients across a number of markets.
+								Policy Blueprint & Belo is an independent investment research,
+								institutional strategy and political risk advisory firm, that
+								combines economic data and policy insight to analyze global and
+								regional trends in support of investment decisions for clients
+								across a number of markets.
 							</p>
 							<Button href="/call" type="primary">
 								Book a Courtesy Call
@@ -75,10 +76,10 @@ export default function Home({ menu }) {
 				<Grid.Col md="col-7 / grid-end">
 					<div className="body f-serif body s-lg">
 						<p>
-							PB&B’s team of economists, data scientists and journalists utilize{" "}
-							<strong>qualitative</strong> and{" "}
-							<srong>quantitative intelligence</srong>, <strong>surveys</strong>
-							, <strong>bespoke research</strong>, and{" "}
+							PB&B’s team of policy experts, economists, data scientists and
+							journalists utilize <strong>qualitative</strong> and{" "}
+							<strong>quantitative</strong> intelligence,{" "}
+							<strong>surveys</strong>, <strong>bespoke research</strong>, and{" "}
 							<strong>media monitoring</strong> to deliver tailored support to
 							the investment process.
 						</p>
@@ -129,7 +130,7 @@ export default function Home({ menu }) {
 						</p>
 						<div className="ta-center">
 							<Button href="/material" type="primary">
-								See examples of our work
+								Request a sample of our work
 							</Button>
 						</div>
 					</div>

@@ -33,9 +33,8 @@ const Footer = () => {
 							<img src="/img/pbnb-full.svg" />
 						</section>
 						<section className={styles.links}>
-							<h3>Links</h3>
 							<p>
-								<Link href="/material">Request a Sample Material</Link>
+								<Link href="/material">Request Sample Material</Link>
 							</p>
 							<p>
 								<Link href="/call">Book a Courtesy Call</Link>
@@ -49,8 +48,8 @@ const Footer = () => {
 									<a target="_blank" className={styles.pin}>
 										<svg
 											xmlns="http://www.w3.org/2000/svg"
-											width=".85rem"
-											height=".85rem"
+											width="14"
+											height="14"
 											viewBox="0 0 24 24"
 											fill="none"
 											stroke="currentColor"
@@ -71,8 +70,8 @@ const Footer = () => {
 								<a href="tel:+19174762086" className={styles.pin}>
 									<svg
 										xmlns="http://www.w3.org/2000/svg"
-										width=".85rem"
-										height=".85rem"
+										width="14"
+										height="14"
 										viewBox="0 0 24 24"
 										fill="none"
 										stroke="currentColor"
@@ -83,14 +82,14 @@ const Footer = () => {
 										<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
 									</svg>
 								</a>
-								+1 917 476-2086
+								+55 31 3654-4305
 							</p>
 							<p>
 								<a href="mailto:pbnb@pbnb.re" className={styles.pin}>
 									<svg
 										xmlns="http://www.w3.org/2000/svg"
-										width=".85rem"
-										height=".85rem"
+										width="14"
+										height="14"
 										viewBox="0 0 24 24"
 										fill="none"
 										stroke="currentColor"
@@ -113,8 +112,8 @@ const Footer = () => {
 									<a target="_blank" className={styles.pin}>
 										<svg
 											xmlns="http://www.w3.org/2000/svg"
-											width=".85rem"
-											height=".85rem"
+											width="14"
+											height="14"
 											viewBox="0 0 24 24"
 											fill="none"
 											stroke="currentColor"
@@ -135,8 +134,8 @@ const Footer = () => {
 								<a href="tel:+12023138825" className={styles.pin}>
 									<svg
 										xmlns="http://www.w3.org/2000/svg"
-										width=".85rem"
-										height=".85rem"
+										width="14"
+										height="14"
 										viewBox="0 0 24 24"
 										fill="none"
 										stroke="currentColor"
@@ -153,8 +152,8 @@ const Footer = () => {
 								<a href="mailto:pbnb@pbnb.re" className={styles.pin}>
 									<svg
 										xmlns="http://www.w3.org/2000/svg"
-										width=".85rem"
-										height=".85rem"
+										width="14"
+										height="14"
 										viewBox="0 0 24 24"
 										fill="none"
 										stroke="currentColor"
