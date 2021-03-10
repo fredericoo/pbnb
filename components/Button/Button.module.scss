@@ -176,6 +176,15 @@
 		color: var(--colour__primary);
 		position: relative;
 		white-space: nowrap;
+		&:after {
+			margin-left: 0.5em;
+			margin-right: -0.25em;
+			content: "";
+			width: 0;
+			height: 0;
+			display: inline-block;
+			transition: 0.4s var(--easing);
+		}
 		&:before {
 			content: "";
 			position: absolute;
