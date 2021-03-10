@@ -59,7 +59,11 @@ const Navbar = () => {
 						<Button type="secondary" size="sm" href="/material">
 							{t("common:menu.sampleMaterial")}
 						</Button>
-						<Button type="primary" size="sm" href="/call">
+						<Button
+							type={asPath === "/" ? "primary" : "secondary"}
+							size="sm"
+							href="/call"
+						>
 							{t("common:menu.courtesyCall")}
 						</Button>
 					</div>
