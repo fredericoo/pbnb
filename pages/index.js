@@ -44,7 +44,7 @@ export default function Home({ menu }) {
 						<Particles />
 					</div>
 				</Grid.Col>
-				<Grid.Col rowSm="1" md="col-4 / span 6" className="py-5">
+				<Grid.Col rowSm="1" md="col-2 / span 8" className="py-5">
 					<Flow>
 						<header>
 							<p className="smcp l-2">Designed for investors</p>
