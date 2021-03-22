@@ -82,3 +82,13 @@ b {
 		padding-bottom: $i * 1rem;
 	}
 }
+
+.negative {
+	background: #0a2540;
+	color: var(--colour__bg);
+	.body {
+		p {
+			color: rgb(173, 189, 204);
+		}
+	}
+}

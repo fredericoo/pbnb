@@ -171,6 +171,21 @@
 			}
 		}
 	}
+
+	&--primaryAlt {
+		z-index: 1;
+		@extend .type--primary;
+		&:before {
+			opacity: 0.5;
+			background: var(--colour__positive4);
+		}
+		@include on-event {
+			&:before {
+				background: var(--colour__positive4);
+				opacity: 1;
+			}
+		}
+	}
 	&--secondary {
 		background: transparent;
 		color: var(--colour__primary);

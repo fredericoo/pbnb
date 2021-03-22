@@ -10,6 +10,7 @@ import Button from "components/Button/Button";
 import Ticker from "components/Ticker/Ticker";
 import useSWR from "swr";
 import { useState, useEffect } from "react";
+import Columns from "components/Columns/Columns";
 
 export default function Home({ menu }) {
 	const fetcher = (url) => fetch(url).then((r) => r.json());
@@ -49,17 +50,17 @@ export default function Home({ menu }) {
 						<header>
 							<p className="smcp l-2">Designed for investors</p>
 							<h1 className="h-1">
-								Combining policy insight and economic data to analyze global and
-								regional trends.
+								Drive <em>smart decisions</em> through policy insights and
+								economic data analysis on global and regional trends.
 							</h1>
 						</header>
 						<div className={`body`}>
 							<p>
-								Policy Blueprint & Belo is an independent investment research,
-								institutional strategy and political risk advisory firm, that
-								combines economic data and policy insight to analyze global and
-								regional trends in support of investment decisions for clients
-								across a number of markets.
+								Policy Blueprint & Belo (PB&B) is independent investment
+								research, institutional strategy, and political risk advisory
+								firm that combines policy and economic analysis to provide
+								insight into global and regional trends to inform strategic
+								decisions for clients across a number of markets.
 							</p>
 							<Button href="/call" type="primary">
 								Book a Courtesy Call
@@ -69,70 +70,74 @@ export default function Home({ menu }) {
 				</Grid.Col>
 			</Grid>
 
-			<Grid container>
-				<Grid.Col md="grid-start / col-6">
+			<Grid>
+				<Grid.Col md="grid-start / col-6" className="py-3">
 					<Image src="/img/globe.svg" width={512} height={512} />
 				</Grid.Col>
 				<Grid.Col md="col-7 / grid-end">
 					<div className="body f-serif body s-lg">
 						<p>
-							PB&B’s team of policy experts, economists, data scientists and
-							journalists utilize <strong>qualitative</strong> and{" "}
+							Our team of policy experts, economists, data scientists, and
+							journalists leverage <strong>qualitative</strong> and{" "}
 							<strong>quantitative</strong> intelligence,{" "}
 							<strong>surveys</strong>, <strong>bespoke research</strong>, and{" "}
 							<strong>media monitoring</strong> to deliver tailored support to
-							the investment process.
+							decision-making and investment processes.
 						</p>
 						<p>
-							Our research allows analysts and portfolio managers to{" "}
-							<strong>focus on opportunities</strong> relevant to their specific
+							We provide a unique combination of{" "}
+							<strong>in-depth political awareness</strong>, understanding of
+							regulatory, and legislative procedures, sectorial stakeholder
+							mapping providing clients with a targeted perspective on the
+							performance of strategic companies and sectors.
+						</p>
+						<p>
+							Through our research, we answer{" "}
+							<strong>high-impact questions</strong> that enable businesses and
+							investors to zero in on opportunities relevant to their specific
 							market and business needs.
-						</p>
-						<p>
-							By means of <strong>original and unbiased research</strong>, PB&B
-							provides data-driven evidence to answer the difficult and high
-							impact questions that ultimately drive securities prices.
 						</p>
 					</div>
 				</Grid.Col>
 			</Grid>
 
-			<Grid container>
-				<Grid.Col className="my-3" md="col-4 / span 6">
-					<div className="body">
-						<p>
-							The firm also specializes in the design of strategies for
-							investment funds, corporations and banks and the evaluation of
-							political, regulatory and legislative risk for companies listed on
-							the <Ticker entry={entries.NYSE} label="NYSE" />,{" "}
-							<Ticker entry={entries.Nasdaq} label="Nasdaq" />,{" "}
-							<Ticker entry={entries.Bovespa} label="Bovespa" /> and other Latin
-							American stock exchanges.
-						</p>
-						<p>
-							PB&B leverages direct and indirect interactions with local
-							governments, regulatory agencies and Congress to identify factors
-							that can influence the future performance of targeted companies.
-							In-depth analysis of key decision makers, opinion makers,
-							competitors and local policies allow PB&B to anticipate potential
-							impacts on companies and sectors.
-						</p>
-						<p>
-							Our reports and strategies are tailor-made and timely delivered to
-							support the decision-making of investors. PB&B expertise in
-							performing reputational due diligence is also an asset used by
-							institutions to evaluate risks related to M&A and/or direct
-							investments. The unique combination of in-depth political
-							awareness, understanding of regulatory and legislative procedures,
-							sectorial stakeholder mapping and identification of trends offers
-							the client a unique perspective on the performance of strategic
-							companies and sectors.
-						</p>
-						<div className="ta-center">
-							<Button href="/material" type="primary">
-								Request a sample of our work
-							</Button>
+			<Grid className="negative">
+				<Grid.Col className="my-5" md="grid-start / grid-end">
+					<h2 className="h-2 f-serif">We specialize in:</h2>
+					<Columns sm="1" md="2" className="my-3">
+						<div className="body s-lg">
+							<p>
+								Designing strategies for investment funds, corporations, and
+								banks Evaluating political, regulatory, and legislative risk for
+								companies listed on <Ticker entry={entries.NYSE} label="NYSE" />
+								, <Ticker entry={entries.Nasdaq} label="Nasdaq" />,{" "}
+								<Ticker entry={entries.Bovespa} label="Bovespa" />, and other
+								Latin American stock exchanges
+							</p>
 						</div>
+						<div className="body s-lg">
+							<p>
+								Providing analysis of key decision-makers, thought leaders to
+								help clients anticipate change within target sectors
+							</p>
+						</div>
+						<div className="body s-lg">
+							<p>
+								Conducting competitor analysis to increase industry/market
+								awareness
+							</p>
+						</div>
+						<div className="body s-lg">
+							<p>
+								Performing comprehensive reputational due diligence to enable
+								clients to evaluate risks from M&As or direct investments.
+							</p>
+						</div>
+					</Columns>
+					<div className="ta-center">
+						<Button href="/material" type="primaryAlt">
+							Request a sample of our work
+						</Button>
 					</div>
 				</Grid.Col>
 			</Grid>

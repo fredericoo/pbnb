@@ -28,7 +28,7 @@ const Ticker = ({ entry, label }) => {
 	const direction =
 		entry?.change > 0 ? "positive" : entry?.change < 0 ? "negative" : "neutral";
 	return (
-		<li className={`s-xs ${styles.entry} ${styles[direction]}`}>
+		<li className={`s-md ${styles.entry} ${styles[direction]}`}>
 			<span className={`${styles.label}`}>{label || entry?.name}</span>
 			{/* <div ref={numberRef} className={`${styles.price}`}>
 					{withSeparator(
