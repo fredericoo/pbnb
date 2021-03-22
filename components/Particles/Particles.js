@@ -21,12 +21,12 @@ const Particles = () => (
 						},
 					},
 					color: {
-						value: "#ffffff",
+						value: "#73b0a6",
 					},
 					shape: {
 						type: "circle",
 						stroke: {
-							width: 1,
+							width: 0,
 							color: "#000000",
 						},
 						polygon: {
@@ -44,7 +44,7 @@ const Particles = () => (
 						},
 					},
 					size: {
-						value: 2,
+						value: 5,
 						random: true,
 						anim: {
 							enable: false,
@@ -62,9 +62,9 @@ const Particles = () => (
 					},
 					move: {
 						enable: true,
-						speed: 6,
-						direction: "none",
-						random: false,
+						speed: 2,
+						direction: "top",
+						random: true,
 						straight: false,
 						out_mode: "out",
 						bounce: false,
