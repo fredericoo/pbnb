@@ -101,41 +101,38 @@ export default function Home({ menu }) {
 				</Grid.Col>
 			</Grid>
 
-			<Grid className="negative">
-				<Grid.Col className="my-5" md="grid-start / grid-end">
+			<Grid>
+				<Grid.Col className="my-5 ta-right" md="grid-start / col-7">
 					<h2 className="h-2 f-serif">We specialize in:</h2>
-					<Columns sm="1" md="2" className="my-3">
-						<div className="body s-lg">
-							<p>
+				</Grid.Col>
+				<Grid.Col className="my-5" md="col-7 / grid-end">
+					<div className="body s-lg">
+						<ul>
+							<li className="my-1">
 								Designing strategies for investment funds, corporations, and
-								banks Evaluating political, regulatory, and legislative risk for
-								companies listed on <Ticker entry={entries.NYSE} label="NYSE" />
-								, <Ticker entry={entries.Nasdaq} label="Nasdaq" />,{" "}
+								banks Evaluating political, regulatory, and legislative risk
+								for, companies listed on{" "}
+								<Ticker entry={entries.NYSE} label="NYSE" />
+								<Ticker entry={entries.Nasdaq} label="Nasdaq" />,{" "}
 								<Ticker entry={entries.Bovespa} label="Bovespa" />, and other
 								Latin American stock exchanges
-							</p>
-						</div>
-						<div className="body s-lg">
-							<p>
+							</li>
+							<li className="my-1">
 								Providing analysis of key decision-makers, thought leaders to
 								help clients anticipate change within target sectors
-							</p>
-						</div>
-						<div className="body s-lg">
-							<p>
+							</li>
+							<li className="my-1">
 								Conducting competitor analysis to increase industry/market
 								awareness
-							</p>
-						</div>
-						<div className="body s-lg">
-							<p>
+							</li>
+							<li className="my-1">
 								Performing comprehensive reputational due diligence to enable
 								clients to evaluate risks from M&As or direct investments.
-							</p>
-						</div>
-					</Columns>
-					<div className="ta-center">
-						<Button href="/material" type="primaryAlt">
+							</li>
+						</ul>
+					</div>
+					<div className="ta-center my-3">
+						<Button href="/material" type="primary">
 							Request a sample of our work
 						</Button>
 					</div>
