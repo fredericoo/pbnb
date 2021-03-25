@@ -102,10 +102,8 @@ export default function Home({ menu }) {
 			</Grid>
 
 			<Grid>
-				<Grid.Col className="my-5 ta-right" md="grid-start / col-7">
+				<Grid.Col className="my-5" md="col-3 / col-11">
 					<h2 className="h-2 f-serif">We specialize in:</h2>
-				</Grid.Col>
-				<Grid.Col className="my-5" md="col-7 / grid-end">
 					<div className="body s-lg">
 						<ul>
 							<li className="my-1">
