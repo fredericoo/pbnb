@@ -140,6 +140,9 @@ figcaption {
 			color: var(--colour__main);
 		}
 	}
+	li {
+		line-height: var(--leading);
+	}
 	p:not(:last-child) {
 		margin-bottom: var(--leading);
 	}
